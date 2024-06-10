@@ -1,0 +1,343 @@
+*,::before,::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    font-family: open sans, Arial, Helvetica, sans-serif;
+    background-color: #fff;
+}
+a{
+color: #000;
+}
+#all h1{
+    font-size: 20px;
+    margin: 20px;
+}
+/* <<<<<<<<<<<<<<<<header>>>>>>>>>>>>>>> */
+header{
+    padding: 60px 10px;
+    margin: 0 auto;
+}
+header ul{
+    display: flex;
+    justify-content: space-between;
+}
+header ul .left{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.left .Dribble{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    font-style: italic;
+}
+header ul .right li button{
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 25%;
+    font-size: 20px;
+}
+header ul .right{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 10px; */
+}
+/* <<<<<<<<<<<<<<<< beginner>>>>>>>>>>>>>>>>>>>>> */
+.beginner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    font-size: 20px;
+}
+.beginner .annonce{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.beginner .annonce .button{
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    width: 10rem;
+    margin: auto;
+    font-size: 18px;
+}
+.beginner a{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(205, 48, 205);
+    color: #fff;
+    padding: 10px;
+    width: 30%;
+    margin: auto;
+    font-size: 18px;
+    border-radius: 5%;
+}
+
+h1{
+    text-align: center;
+    color: #000;margin-top: 30px;
+}
+                  /* <<<<<<<< pour les slider>>>>>>>>>> */
+.slider-content{
+    max-width: 1500px;
+    background-color: #f1f1f1;
+    border: 1px solid ;
+    /* padding: 100px 20px; */
+    gap: 10px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.slider{
+    display: flex;
+    gap: 10px;
+                      /* animation: slider 12s infinite ease-in-out; */
+}
+.slider img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 25%;
+    /* padding: 80px 0; */
+    /* flex-shrink: 0; */
+    /* animation: slider 10s infinite linear; */
+    
+}
+@keyframes slider {
+  0%,10%{
+    transform: translateX(0);
+  }
+  15%,25%{
+    transform: translateX(-100%);
+  }
+  30%,40%{
+    transform: translateX(-200%);
+  }
+  45%,55%{
+    transform: translateX(-300%);
+  }
+  60%,70%{
+    transform: translateX(-400%);
+  }
+  75%,85%{
+    transform: translateX(-500%);
+  }
+  90%,95%{
+    transform: translateX(-600%);
+  }
+  100%{
+    transform: translateX(-700%);
+  }
+  
+}
+.galerie{
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 100px 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,300px);
+    grid-auto-rows: 300px;
+    gap: 10px;
+    justify-content: center;
+    list-style: none;
+}
+.profil-card{
+position: relative;
+/* parce qu'on aura besoin de donner une position absolute 
+a ses enfants */
+overflow: hidden;   
+ /* pour cacher les elements qui depasse */
+ cursor: pointer;
+ /* pour le style de curseur qu'on doit utiliser */
+ transition: transform 0.4s ease-out;
+ /* pour une transition de l'exterieur de 0,4 second */
+ border: 1px solid #b7b7b75a;
+}
+.profil-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* couvrir l'espace sans pouvoir se deformer */
+}
+/* on attaque le cotes des resseaux sociaux */
+.social-side{
+    position: absolute;
+    top: 0;
+    /* l'element se positionne tout en haut */
+    height: 100%;
+    list-style-type: none;
+}
+.social-side a{
+    width: 30px;
+    height: 30px;  
+    border-radius: 50%; 
+    margin: 5px;
+    border: 1px solid #999;
+    background-color: #1b1b1b;
+    /* le display flex permet a nos liens de devenir
+     des elements block 
+    afin que le width puisse s'appliquer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(calc(-100% - 10px));
+    /* on utilise transform pour faire disparaitre les liens  */
+    transition: transform 0.2s ease-in-out;   
+
+}
+.social-side a img{
+    width: 100%;
+}
+/* l'icone des sociaux */
+ ul a img{
+    width: 50px;
+}
+.profil-infos{
+    position: absolute;
+    bottom: 0;  /* on placer notre element tout en bas   */
+    width: 100%;
+    padding: 10px;
+    background-color: #0c1d42;
+    text-align: center;
+    transform: translateY(100%);
+    /* ce qui nous permet de pousser notre element infos vers le bas  */
+    transition: transform 0.3s ease-in-out;
+}
+.profil-name{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #fff;
+}
+.profil-work{
+    font-size: 16px;
+    font-weight: 500;
+    font-style: initial;
+    color: #f1f1f1;
+}
+.profil-work .profil-name{
+    will-change: transform;
+    /* pour informer au navigateur que notre element va se transformer */
+}
+.profil-card:hover .profil-infos,
+.profil-card:hover .social-side a{
+    transform: translate(0);
+}
+.profil-card:hover .social-side a:nth-child(1) {
+    /* on va insister sur le delei de transition */
+    transition-delay: 0.1s;
+}
+.profil-card:hover .social-side a:nth-child(2) {
+    /* on va insister sur le delei de transition */
+    transition-delay: 0.2s;
+}
+.profil-card:hover{
+    transform: scale(0.95);
+    box-shadow: 0 0 0 3px #f1f1f1;
+}
+.content-slide-2{
+    background-color: hsl(0, 0%, 95%);
+    max-width: 1500px;border: 1px solid;
+    padding: 50px 30px;
+    margin: 0 auto;
+    overflow: hidden;
+   
+}
+.slide-2{
+    /* position: relative; */
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+    /* animation: slider-2 10s infinite linear; */
+    
+}
+.slide-2 img{
+ width: 200px;
+ height: 200px;
+ object-fit: cover;
+ border-radius: 25px;
+ cursor: pointer;
+ /* width: 100%; */
+ animation: slider-2 10s infinite linear;
+}
+
+
+@keyframes slider-2 {
+   from{
+    transform: translateX(0);
+   }
+   to{
+    transform: translateX(-100%);
+   }
+
+}
+.slide-2:hover{
+    animation-play-state: paused!important;
+    cursor: pointer;
+}
+
+@media (pointer: coarse) {
+    .profil-infos,.social-side a{
+        transform: translate(0);
+        
+    }
+    
+    .profil-card:hover{
+        transform: none;
+        box-shadow: none;
+    }
+}
+@media (max-width:630px){
+    .galerie{
+        grid-template-columns: minmax(auto,450px);
+        grid-auto-rows: auto;
+        grid-gap: 50px;
+        
+    }
+   
+}
+@media screen and (max-width:1024px){
+    header{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    header ul{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+    }
+    header ul .left{
+         width: 60%;
+         flex-basis: auto;
+         flex-shrink: 1;
+        /* display: flex;
+        justify-content: space-between;
+         align-items: center;  */
+    }
+    .right{
+        width: 30%;
+        justify-content: space-between;
+    }
+    .beginner{
+        width: 100%;
+    }
+    .beginner a{
+        width: 100%;
+    }
+}
