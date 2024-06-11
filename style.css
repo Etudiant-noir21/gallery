@@ -103,45 +103,37 @@ h1{
 }
 .slider{
     display: flex;
-    gap: 10px;
-                      /* animation: slider 12s infinite ease-in-out; */
+     width: 100%;
+    height: var(--height);
+    position: relative;
+    min-width: calc(var(--width) * var(--quantity));
+    
+}
+.slide-card{
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 100%;
+    animation: slider 10s infinite linear ;
+    animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1));
 }
 .slider img{
     width: 300px;
     height: 300px;
     object-fit: cover;
     border-radius: 25%;
-    /* padding: 80px 0; */
-    /* flex-shrink: 0; */
-    /* animation: slider 10s infinite linear; */
     
 }
 @keyframes slider {
-  0%,10%{
-    transform: translateX(0);
+ from{
+    
+    left: 100%;
   }
-  15%,25%{
-    transform: translateX(-100%);
+  to{
+    left: calc(var(--width) * -1) ;
+
   }
-  30%,40%{
-    transform: translateX(-200%);
-  }
-  45%,55%{
-    transform: translateX(-300%);
-  }
-  60%,70%{
-    transform: translateX(-400%);
-  }
-  75%,85%{
-    transform: translateX(-500%);
-  }
-  90%,95%{
-    transform: translateX(-600%);
-  }
-  100%{
-    transform: translateX(-700%);
-  }
-  
+ 
 }
 .galerie{
     max-width: 1500px;
@@ -257,13 +249,22 @@ overflow: hidden;
    
 }
 .slide-2{
-    /* position: relative; */
+     position: relative; 
     display: flex;
     gap: 10px;
     justify-content: center;
     width: 100%;
+     height: var(--height);
     /* animation: slider-2 10s infinite linear; */
-    
+    min-width: calc(var(--width) * var(--quantity))
+}
+.card-slider{
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 100%;
+    animation: slider-2 10s infinite linear;
+    animation-delay: calc((10s / var(--quantity)) * (var(--position) - 1));
 }
 .slide-2 img{
  width: 200px;
@@ -271,22 +272,19 @@ overflow: hidden;
  object-fit: cover;
  border-radius: 25px;
  cursor: pointer;
- /* width: 100%; */
- animation: slider-2 10s infinite linear;
 }
 
 
 @keyframes slider-2 {
    from{
-    transform: translateX(0);
+    left: 100%;
    }
    to{
-    transform: translateX(-100%);
+    left: calc(var(--width) * -1);
    }
-
 }
-.slide-2:hover{
-    animation-play-state: paused!important;
+.card-slider:hover{
+    animation-play-state: paused;
     cursor: pointer;
 }
 
